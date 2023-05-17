@@ -1,20 +1,22 @@
 # Flex CSS
 
-### Responsividade para todo o CSS, não apenas para a grid
+Responsividade para todo o CSS, não apenas para a grid.
+
+Esqueça media query.
 
 ### Defina seus prefixos e tamanhos
 
 ```Javascript
 
 const sizes1 = [
-    { prefix: 'p-', minSize: 0 },
+    { prefix: 's-', minSize: 0 },
     { prefix: 'm-', minSize: 500 },
     { prefix: 'l-', minSize: 1000 }
 ];
 
 const sizes2 = [
-    { prefix: 'xp-', minSize: 0 },
-    { prefix: 'p-', minSize: 433 },
+    { prefix: 'xs-', minSize: 0 },
+    { prefix: 's-', minSize: 433 },
     { prefix: 'm-', minSize: 733 },
     { prefix: 'l-', minSize: 1000 },
     { prefix: 'xl-', minSize: 1333 }
@@ -26,11 +28,11 @@ const sizes2 = [
 
 ```CSS
 
-.xp-panel {width: 100%}
+.xs-panel {width: 100%}
 .m-panel {width: 50%}
 .l-panel {width: 33%}
 
-.xp-span {
+.xs-span {
     text-align: left;
     color: black;
 }
@@ -46,6 +48,6 @@ const sizes2 = [
 ```Javascript
 
 // Simplesmente chame esta função no final do seu index.html
-proccessFlexCSS(sizes);
+processFlexCSS(sizes);
 
 ```

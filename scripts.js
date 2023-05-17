@@ -1,7 +1,7 @@
 
 const defaultSizes = [
-    { prefix: 'xp-', minSize: 0 },
-    { prefix: 'p-', minSize: 433 },
+    { prefix: 'xs-', minSize: 0 },
+    { prefix: 's-', minSize: 433 },
     { prefix: 'm-', minSize: 733 },
     { prefix: 'l-', minSize: 1000 },
     { prefix: 'xl-', minSize: 1333 }
@@ -9,7 +9,7 @@ const defaultSizes = [
 
 let lastSizePrefix = '';
 
-function proccessFlexCSS(sizes = defaultSizes) {
+function processFlexCSS(sizes = defaultSizes) {
     if (!sizes || !Array.isArray(sizes)) {
         return;
     }
@@ -19,12 +19,12 @@ function proccessFlexCSS(sizes = defaultSizes) {
         return;
     }
     if (size.prefix === lastSizePrefix) {
-        setTimeout(() => proccessFlexCSS(sizes), 200);
+        setTimeout(() => processFlexCSS(sizes), 200);
         return;
     }
     lastSizePrefix = size.prefix;
     applyFlexCSS(sizes, size.prefix, document.body);
-    setTimeout(() => proccessFlexCSS(sizes), 500);
+    setTimeout(() => processFlexCSS(sizes), 500);
 }
 
 function applyFlexCSS(sizes, prefix, element) {
